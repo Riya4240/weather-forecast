@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-cloud-sun"></i> Weather Dashboard</h1>
+            <div class="search-container">
+                <input type="text" id="city-input" placeholder="Enter city name...">
+                <button id="search-btn"><i class="fas fa-search"></i> Search</button>
+                <button id="location-btn"><i class="fas fa-location-arrow"></i> Use My Location</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="current-weather">
+                <div class="weather-card">
+                    <h2 id="current-city">Current Location</h2>
+                    <div class="weather-main">
+                        <div class="weather-icon">
+                            <img id="current-icon" src="images/icons/01d.png" alt="Weather icon">
+                        </div>
+                        <div class="weather-temp">
+                            <span id="current-temp">--</span><span class="temp-unit">°C</span>
+                        </div>
+                        <div class="weather-desc">
+                            <p id="current-desc">--</p>
+                        </div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <i class="fas fa-temperature-high"></i>
+                            <span id="feels-like">Feels like: --</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-tint"></i>
+                            <span id="humidity">Humidity: --%</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-wind"></i>
+                            <span id="wind">Wind: -- km/h</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-eye"></i>
+                            <span id="visibility">Visibility: -- km</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="hourly-forecast">
+                <h2>Today's Forecast</h2>
+                <div class="hourly-container" id="hourly-container">
+                    <!-- Hourly items will be added dynamically -->
+                </div>
+            </section>
+
+            <section class="forecast">
+                <h2>5-Day Forecast</h2>
+                <div class="forecast-container" id="forecast-container">
+                    <!-- Forecast items will be added dynamically -->
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Weather Dashboard &copy; <span id="year"></span></p>
+            <p>Data provided by OpenWeatherMap</p>
+        </footer>
+    </div>
+
+    <script src="js/weatherService.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
